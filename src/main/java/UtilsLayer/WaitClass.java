@@ -11,7 +11,7 @@ import BaseLayer.BaseClass;
 
 public class WaitClass extends BaseClass {
 
-	public static void visibilityOfElement(WebElement wb ,String value)
+	public static void visibilityOfElement(WebElement wb)
 	
 	{
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
@@ -22,9 +22,15 @@ public class WaitClass extends BaseClass {
 	
 	public static void sendKeys(WebElement wb, String value)
 	{
-		WaitClass.visibilityOfElement(wb, value);
+		 new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(wb)).sendKeys(value);
 		
 		
 	}
-	
+	 public static void click(WebElement wb) {
+		 
+		 new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(wb)).click();;
+	 }
+	 
+	 
+
 }
