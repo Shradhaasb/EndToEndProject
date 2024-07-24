@@ -32,5 +32,13 @@ public class WaitClass extends BaseClass {
 	 }
 	 
 	 
-
+	 public static String getAttribute(WebElement wb)
+	 {
+		 
+		// String empid =wb.getAttribute(Value);
+		 
+		 
+		 return new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(wb)).getAttribute("Value");
+		 
+	 }
 }
